@@ -50,7 +50,9 @@ class HangpersonGame
 
   def check_win_or_lose
     
-    if @word.eql? word_with_guesses
+    if @word.empty?
+      :none
+    elsif @word.eql? word_with_guesses
       :win
     elsif @wrong_guesses.length > 6
       :lose
